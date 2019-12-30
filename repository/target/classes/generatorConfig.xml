@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="D:\software\SoftEnviron\apache-maven-3.6.1\maven-repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar"/>
+    <context id="context">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3308/evaluate?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT"
+                        userId="root" password="root">
+            <!-- 加入此注解保证只生成自己需要的User类 -->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!--默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL和 NUMERIC 类型解析为java.math.BigDecimal -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.zq.evaluate.entity" targetProject="MAVEN"/>
+        <sqlMapGenerator targetPackage="com.zq.evaluate.entity" targetProject="MAVEN"/>
+        <javaClientGenerator targetPackage="com.zq.evaluate.repository" targetProject="MAVEN" type="XMLMAPPER"/>
+        <table tableName="user" domainObjectName="UserEntity" mapperName="UserRepository" schema="evaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <!--<table tableName="user_role" domainObjectName="UserRoleEntity" mapperName="UserRoleRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="permission" domainObjectName="PermissionEntity" mapperName="PermissionRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="role" domainObjectName="RoleEntity" mapperName="RoleRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="role_permission" domainObjectName="RolePermissionEntity" mapperName="RolePermissionRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="classes" domainObjectName="ClassesEntity" mapperName="ClassesRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="college" domainObjectName="CollegeEntity" mapperName="CollegeRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="course" domainObjectName="CourseEntity" mapperName="CourseRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="course_type" domainObjectName="CourseTypeEntity" mapperName="CourseTypeRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="department" domainObjectName="DepartmentEntity" mapperName="DepartmentRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="major" domainObjectName="MajorEntity" mapperName="MajorRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="student" domainObjectName="StudentEntity" mapperName="StudentRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="teacher" domainObjectName="TeacherEntity" mapperName="TeacherRepository" schema="teachevaluate">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+    </context>
+</generatorConfiguration>
+
